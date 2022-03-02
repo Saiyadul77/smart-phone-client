@@ -43,9 +43,15 @@ const phoneDetailsInformation = mobile => {
     div.innerHTML = `
         <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Phone Name:${mobile.name}</h5>
-                <h5 class="card-title">Release Date:${mobile.releaseDate}</h5>
-                <h5 class="card-title">Brand Name: ${mobile.brand}</h5>
+                <h3 class="card-title">Phone Name:${mobile.name}</h3>
+                <h4 class="card-title">Release Date:${mobile.releaseDate}</h4>
+                <h4 class="card-title">Brand Name: ${mobile.brand}</h4>
+                <h5 class="card-title">Storage: ${mobile.mainFeatures.storage}</h5>
+                <h5 class="card-title">Display Size: ${mobile.mainFeatures.displaySize}</h5>
+                <h5 class="card-title">Chipset: ${mobile.mainFeatures.chipSet}</h5>
+                <h5 class="card-title">Memory: ${mobile.mainFeatures.memory}</h5>
+                <h5 class="card-title">Sensors: ${mobile.mainFeatures.sensors}</h5>
+                <h5 class="card-title">Others:<br>WLAN: ${mobile.others.WLAN} <br> GPS: ${mobile.others.GPS} <br> NFC: ${mobile.others.NFC}<br> Radio: ${mobile.others.Radio} <br>USB: ${mobile.others.USB}</h5>
             </div>
             
     `;
