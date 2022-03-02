@@ -16,12 +16,20 @@
 
 <body>
     <h1 class="text-center my-5 text-primary">Smart Phone Gallery</h1>
-    <!-- search+button  -->
+    <!-- search option + button  -->
     <div class="input-group mb-3 mx-auto w-50">
         <input id="phone-name" type="text" class="form-control" placeholder="Please input phone name"
             aria-label="Recipient's username" aria-describedby="button-addon2">
         <button onclick="searchPhone()" class="btn btn-outline-secondary" type="button"
             id="button-search">Button</button>
+    </div>
+    <!-- three column card -->
+    <div id="phone-details" class="row row-cols-1 row-cols-sm-12 row-cols-md-3 row-cols-lg-3  g-4 my-5 pb-5">
+    </div>
+
+    <!-- single column card for details phone -->
+    <div id="single-phone" class="card mx-auto" style="width: 18rem;">
+
     </div>
     <!-- bootstrap script  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
