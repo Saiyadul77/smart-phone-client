@@ -1,16 +1,33 @@
+document.getElementById('error-message').style.display = 'none';
 const searchPhone = () => {
     const phoneName = document.getElementById('phone-name');
     const phone = phoneName.value;
     phoneName.value = '';
-    const url = `https://openapi.programming-hero.com/api/phones?search=${phone}`
+    document.getElementById('error-message').style.display = 'none';
+    if (phone == '') {
+        document.getElementById('error-message').style.display = 'block';
+    }
+    else {
 
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayPhone(data.data));
+        const url = `https://openapi.programming-hero.com/api/phones?search=${phone}`
+
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displayPhone(data.data))
+            .catch(error => displayError(error));
+    }
+
+}
+const displayError = error => {
+    document.getElementById('error-message').style.display = 'block';
 }
 
 const displayPhone = (phones) => {
     const phoneDetails = document.getElementById('phone-details')
+    phoneDetails.textContent = '';
+    if (phones.length == 0) {
+        return alert('No result found');
+    }
     phones.forEach(phone => {
         // console.log(phone)
         const div = document.createElement('div');
