@@ -35,12 +35,13 @@ const phoneExplore = explore => {
 }
 
 const phoneDetailsInformation = mobile => {
+    console.log(mobile)
     const singlePhone = document.getElementById('single-phone');
     const div = document.createElement('div');
     console.log(div);
     div.classList.add('card');
     div.innerHTML = `
-        <img src="${mobile.image}" class="card-img-top w-75 mx-auto" alt="...">
+        <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Phone Name:${mobile.name}</h5>
                 <h5 class="card-title">Release Date:${mobile.releaseDate}</h5>
